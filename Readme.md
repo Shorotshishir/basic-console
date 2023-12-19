@@ -27,8 +27,3 @@ Run the application through your IDE or navigate to the output directory and run
 
 ## Contributing
 Contributions are welcome. Please open an issue first to discuss what you would like to change or add.
-
-
----
-
-This template provides a basic structure including a description, features, getting started instructions, contribution guidelines, and license information. You may need to adjust it according to the specific details and functionalities of your project.
