@@ -1,10 +1,14 @@
+using Basic.Applog;
 using Basic.Util;
+using Timer = Basic.Util.Timer;
 
 namespace Basic;
 public class Cli
 {
     public static async Task Interpreter()
     {
+        AppLog.WriteOut(new AppLog(DateTimeOffset.Now, ["App Started"]));
+        Timer.Start();
         Log.Out("");
         while (true)
         {
@@ -23,7 +27,7 @@ public class Cli
                     await cmd(commandArr);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 Log.Error("Invalid command. Please type 'help' for more information.");
             }
