@@ -1,11 +1,13 @@
 ﻿using System.Runtime.InteropServices;
 using Basic;
+using Basic.Applog;
 using Basic.Util;
 
 internal class Program
 {
     private static async Task Main(string[] args)
     {
+        AppLog.Init();
         SetWindowSize();
         Log.Ok("Welcome to basic CLI applciation");
         await Cli.Interpreter();

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Basic.Util
+﻿namespace Basic.Util
 {
     public static class Log
     {

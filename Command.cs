@@ -1,5 +1,7 @@
 
+using Basic.Applog;
 using Basic.Util;
+using Timer = Basic.Util.Timer;
 
 namespace Basic;
 public class Command
@@ -13,6 +15,10 @@ public class Command
 
     private static Task CommandExit(string[]? args = null)
     {
+        Log.Out("Bye!");
+        AppLog.WriteOut(new AppLog(DateTimeOffset.Now, [.. args]));
+        var appTime = Timer.Stop();
+        AppLog.WriteOut(new AppLog(DateTimeOffset.Now, [$"App Running for {appTime}ms"]));
         Environment.Exit(0);
         return Task.CompletedTask;
     }
@@ -31,6 +37,7 @@ public class Command
             {
                 Log.Out($"\t{item.Cmd}\t{item.Help}");
             }
+            AppLog.WriteOut(new AppLog(DateTimeOffset.Now, [.. args]));
         }
         return Task.CompletedTask;
     }
